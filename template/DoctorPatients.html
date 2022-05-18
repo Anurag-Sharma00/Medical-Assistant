@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- jQuery -->
+    <script type="text/javascript"
+            src=
+                    "https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet"
+          href=
+                  "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <script type="text/javascript"
+            src=
+                    "https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+    <script src=
+                    "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Orelega+One&display=swap" rel="stylesheet">
+
+
+    <script src="/static/project5.js">
+
+    </script>
+
+</head>
+<body>
+
+<div style="background:#edf5e1; height:100vh; display:flex; justify-content:center; align-items:center;" class="root">
+
+    <div style="background:#FFFFFF; width:1200px; height:700px; border-radius:10px;" class="row">
+        <div style="margin-top:25px;display:flex; justify-content:center; align-items:center; color:white; font-family:Georgia; background:#41b3a3; height:100px; width:100%; border-radius:10px 10px 10px 10px;  font-size:22px;"
+             class="col s12">
+            Hello Dr. {{ doctorname }}, here are some patients waiting for you
+        </div>
+        <div style="margin:15px;" class="row">
+            <table>
+                <thead style="font-size:20px; color:#41b3a3;" class="head">
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for row in data %}
+                <tr>
+                    <td> {{row.username}}</td>
+                    <td>{{row.mobileno}}</td>
+                    <td>{{row.currentdate}}</td>
+                    <td>{{row.currenttime}}</td>
+                    <td>
+                        <button type="button"  data-target="modal1" class="btnshow btn modal-trigger"
+                                username='{{ row.username }}' usernum='{{ row.usernumber }}'
+                                date='{{ row.currentdate }}' time='{{ row.currenttime }}' userdoctorid = '{{ row.userdoctorid }}' docspl = '{{ docspl }}' >Show
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!----------detail modal--------------->
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div style="display:flex; justify-content:center; align-items:center; color:white; font-family:Georgia; background:#41b3a3; height:50px; width:100%; border-radius:0px 0px 10px 10px;  font-size:22px;"
+         class="col s12">
+        Patient Analysis
+    </div>
+
+    <div style="margin:20px; margin-bottom:5px;" class="row">
+
+        <div id="name" class="col s6" style="display:flex;justify-content:left;">
+
+        </div>
+
+        <div id="Date" class="col s6" style="display:flex;justify-content:right;">
+
+        </div>
+
+    </div>
+
+    <div style="margin-top:0px; margin-right:20px;margin-left:20px;margin-bottom:20px;" class="row">
+
+        <div id="mobile" class="col s6" style="display:flex;justify-content:left;">
+
+        </div>
+
+        <div id="time" class="col s6" style="display:flex;justify-content:right;">
+
+        </div>
+
+
+    </div>
+
+    <hr style="width:99%; background:#41b3a3;">
+<form action="/prescription" method="post">{%csrf_token%}
+
+    <input type="hidden" id="username" name="username" value="">
+    <input type="hidden" id="usermob" name="usermob" value="">
+    <input type="hidden" id="userdate" name="userdate" value="">
+    <input type="hidden" id="usertime" name="usertime" value="">
+
+    <div style="padding:0px; margin-left:15px; margin-right:15px;" class="modal-content">
+
+        <table>
+            <thead style="color:#41b3a3; font-size:18px;">
+            <tr>
+                <th style="margin-right:15px;">S.N0.</th>
+                <th>Question</th>
+                <th>Subquestion</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-bottom:5px;" class="modal-footer row">
+       <span style="display:flex; justify-content:left;" class="col s6"><button type="submit" class="btnprescription btn modal-trigger">Write prescription</button></span>
+       <span style="display:flex; justify-content:right;" class="col s6"><button type="button" class="waves-effect waves-light btn modal-close">Close</button></span>
+    </div>
+</form>
+</div>
+
+
+
+
+
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js">
+</script>
+
+
+</body>
+</html>
