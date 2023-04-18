@@ -12,4 +12,7 @@ This is the Med-Assist project by anurag sharma using python and django
 ![image](https://user-images.githubusercontent.com/105597363/232671605-7816f8d8-6013-4186-b0aa-8f433bbb1a93.png)
 
 
+#Key-Features
+
+
 
