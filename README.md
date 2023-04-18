@@ -1,7 +1,17 @@
 # Medical-Assistant
 This is the Med-Assist project created using django
 
-![Screenshot (30)](https://user-images.githubusercontent.com/105597363/232745733-53fe780c-fbf4-4926-8de4-da678bcf99ef.png)
+![Screenshot (30)](https://user-images.githubusercontent.com/105597363/232746240-6eb1d65f-4997-4364-9230-eff8ec850faf.png)
+
+User Login Page
+
+![Screenshot (14)](https://user-images.githubusercontent.com/105597363/232747022-9fdfa966-9d91-4d2c-95a7-80fa19e34e31.png)
+
+
+
+Doctor Login Page
+![Screenshot (24)](https://user-images.githubusercontent.com/105597363/232747073-d035b766-448a-4bfe-b7c2-2c2409c7c6f6.png)
+
 
 
 
