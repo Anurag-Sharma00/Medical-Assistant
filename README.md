@@ -14,5 +14,8 @@ This is the Med-Assist project created using django
 
 # Key-Features
 
+- Doctor's Assessment
+- Medical Survey
+- Medical assistant for patients
 
 
