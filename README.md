@@ -1,6 +1,9 @@
 # Medical-Assistant
 This is the Med-Assist project created using django
 
+![Screenshot (30)](https://user-images.githubusercontent.com/105597363/232745733-53fe780c-fbf4-4926-8de4-da678bcf99ef.png)
+
+
 
 
 # Build-With
